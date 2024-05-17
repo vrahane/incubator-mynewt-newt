@@ -243,7 +243,7 @@ func (bpkg *BuildPackage) CompilerInfo(
 		return nil, err
 	}
 
-	ci.Includes = append(ci.Includes, includePaths...)
+	ci.Includes = append(bpkg.privateIncludeDirs(b), includePaths...)
 	bpkg.ci = ci
 
 	return bpkg.ci, nil
